@@ -1,0 +1,4 @@
+# GCP Vertex Agent Engine runtime deps — DO NOT EDIT.
+# These are combined with /requirements.txt at build time.
+google-cloud-aiplatform[agent_engines,langchain]>=1.112
+nest-asyncio
