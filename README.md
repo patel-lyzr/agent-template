@@ -1,4 +1,6 @@
-# Lyzr Agent Template
+# Universal Agent Template
+
+> One template. Any framework. Any cloud. Powered by **Lyzr Control Plane**.
 
 A starter for deploying any LangChain / LangGraph / CrewAI / custom Python
 agent to **AWS Bedrock AgentCore** or **GCP Vertex Agent Engine** — same
@@ -30,8 +32,8 @@ agent to **AWS Bedrock AgentCore** or **GCP Vertex Agent Engine** — same
 3. Add any extra deps to the root [`requirements.txt`](./requirements.txt).
 4. Copy `.env.example` → `.env` for local testing.
 5. Push to your own GitHub repo.
-6. In the Lyzr deploy UI: paste the repo URL, pick AWS or GCP, provide env
-   vars, hit **Deploy**.
+6. In the **Lyzr Control Plane** UI: paste the repo URL, pick AWS or GCP,
+   provide env vars, hit **Deploy**.
 
 ## The only rule
 
