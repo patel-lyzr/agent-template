@@ -1,7 +1,7 @@
 """
 LangGraph ReAct agent — reference implementation.
 
-Copy the contents into src/agent.py to use this as your starting point.
+Copy the contents into src/invocation.py to use this as your starting point.
 Demonstrates both `run` (non-streaming) and `stream` (token-level streaming
 via astream_events).
 """

@@ -1,7 +1,7 @@
 """
 LangChain AgentExecutor with OpenAI tool calling — reference implementation.
 
-Copy into src/agent.py to use as your starting point. Demonstrates both `run`
+Copy into src/invocation.py to use as your starting point. Demonstrates both `run`
 and `stream` using `astream_events` on the executor.
 """
 

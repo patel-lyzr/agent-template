@@ -1,8 +1,8 @@
 # Example agents
 
-Each file in this directory is a drop-in replacement for `src/agent.py`.
+Each file in this directory is a drop-in replacement for `src/invocation.py`.
 Copy the one that matches your framework, rename it (or paste its contents)
-into `src/agent.py`, then customize.
+into `src/invocation.py`, then customize.
 
 | File | Framework | Notes |
 |---|---|---|
@@ -28,7 +28,7 @@ handled by the cloud-specific `requirements.txt` under `aws/` and `gcp/`.
 
 ```bash
 # From the repo root:
-cp src/examples/crewai_crew.py src/agent.py
+cp src/examples/crewai_crew.py src/invocation.py
 ```
 
 Commit, push, redeploy.

@@ -11,7 +11,7 @@ agent to **AWS Bedrock AgentCore** or **GCP Vertex Agent Engine** — same
 ```
 .
 ├── src/
-│   └── agent.py                 ← YOU EDIT — implements run() / stream()
+│   └── invocation.py            ← YOU EDIT — implements run() / stream()
 ├── requirements.txt             ← YOU EDIT — your deps
 ├── aws/
 │   ├── entrypoint.py            ← managed (AgentCore wrapper)
@@ -28,7 +28,8 @@ agent to **AWS Bedrock AgentCore** or **GCP Vertex Agent Engine** — same
 ## Quickstart
 
 1. Click **Use this template** (or fork/clone this repo).
-2. Edit [`src/agent.py`](./src/agent.py) — implement `run` and/or `stream`.
+2. Edit [`src/invocation.py`](./src/invocation.py) — implement `run` and/or `stream`.
+   Reference framework examples live in [`src/examples/`](./src/examples/).
 3. Add any extra deps to the root [`requirements.txt`](./requirements.txt).
 4. Copy `.env.example` → `.env` for local testing.
 5. Push to your own GitHub repo.
@@ -37,7 +38,7 @@ agent to **AWS Bedrock AgentCore** or **GCP Vertex Agent Engine** — same
 
 ## The only rule
 
-`src/agent.py` must expose at least one of:
+`src/invocation.py` must expose at least one of:
 
 ```python
 def run(prompt: str, session_id: str | None = None) -> str: ...
@@ -59,7 +60,7 @@ yourself.
 
 ```bash
 pip install -r requirements.txt -r aws/requirements.txt     # or gcp/
-PYTHONPATH=src python -c "from agent import run; print(run('what is 2+2?'))"
+PYTHONPATH=src python -c "from invocation import run; print(run('what is 2+2?'))"
 ```
 
 ## Files you should NOT edit

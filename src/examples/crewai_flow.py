@@ -1,7 +1,7 @@
 """
 CrewAI Flow — reference implementation.
 
-Copy into src/agent.py. Flows support async kickoff, so we can wire both
+Copy into src/invocation.py. Flows support async kickoff, so we can wire both
 `run` (sync wrapper) and `stream` (yields per-step progress as each listener
 fires).
 

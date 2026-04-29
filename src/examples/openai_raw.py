@@ -1,7 +1,7 @@
 """
 Raw OpenAI SDK — reference implementation (no framework).
 
-Copy into src/agent.py. Demonstrates native streaming via the OpenAI
+Copy into src/invocation.py. Demonstrates native streaming via the OpenAI
 `stream=True` API.
 
 Requires `openai` in your root requirements.txt.

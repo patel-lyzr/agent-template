@@ -10,14 +10,14 @@ langchain-openai
 langgraph
 
 # ── Optional: Arize Phoenix observability ───────────────────────────────────
-# Uncomment to enable the instrumentation block in src/agent.py.
+# Uncomment to enable the instrumentation block in src/invocation.py.
 # Pick the instrumentor that matches your framework.
 # arize-phoenix-otel
 # openinference-instrumentation-langchain
 # openinference-instrumentation-crewai
 # openinference-instrumentation-openai
 
-# ── If you swap src/agent.py for a different example, add its deps here ─────
+# ── If you swap src/invocation.py for a different example, add its deps here ─────
 # CrewAI:    crewai
 # Raw OpenAI:  openai
 # LangChain AgentExecutor:  langchain

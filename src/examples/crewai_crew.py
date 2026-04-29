@@ -1,7 +1,7 @@
 """
 CrewAI Crew — reference implementation.
 
-Copy into src/agent.py. CrewAI's `kickoff()` is synchronous and doesn't expose
+Copy into src/invocation.py. CrewAI's `kickoff()` is synchronous and doesn't expose
 token-level streaming, so this example implements only `run`. The wrapper
 automatically makes streaming callers receive the full result as one chunk.
 

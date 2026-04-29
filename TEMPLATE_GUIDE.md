@@ -2,7 +2,7 @@
 
 ## The contract
 
-`src/agent.py` must expose **at least one** of these two functions:
+`src/invocation.py` must expose **at least one** of these two functions:
 
 ```python
 def run(prompt: str, session_id: str | None = None) -> str:
@@ -28,7 +28,7 @@ signatures.
 ## Layout
 
 ```
-src/                     your code (agent.py plus any helpers)
+src/                     your code (invocation.py plus any helpers)
 requirements.txt         your Python deps
 aws/                     AgentCore wrapper + Dockerfile + AgentCore SDK deps
 gcp/                     Agent Engine wrapper + Agent Engine SDK deps
@@ -140,7 +140,7 @@ use `PostgresSaver` / `RedisSaver` with the DB URL as an env var.
 
 ## Observability (optional)
 
-`src/agent.py` ships with a commented-out **Arize Phoenix** instrumentation
+`src/invocation.py` ships with a commented-out **Arize Phoenix** instrumentation
 block. Uncomment it to capture every LLM call, tool call, and graph step as
 OpenTelemetry traces — works with both Phoenix Cloud (free) and self-hosted
 Phoenix.
@@ -151,7 +151,7 @@ Steps:
    arize-phoenix-otel
    openinference-instrumentation-langchain
    ```
-2. Uncomment the `phoenix.otel.register(...)` block in `src/agent.py`.
+2. Uncomment the `phoenix.otel.register(...)` block in `src/invocation.py`.
 3. Provide env vars at deploy time:
    - `PHOENIX_API_KEY`
    - `PHOENIX_COLLECTOR_ENDPOINT` (e.g. `https://app.phoenix.arize.com`)
@@ -205,12 +205,12 @@ Response: newline-delimited JSON.
 pip install -r requirements.txt -r aws/requirements.txt       # or gcp/
 
 # Non-streaming
-PYTHONPATH=src python -c "from agent import run; print(run('what is 2+2?'))"
+PYTHONPATH=src python -c "from invocation import run; print(run('what is 2+2?'))"
 
 # Streaming
 PYTHONPATH=src python -c "
 import asyncio
-from agent import stream
+from invocation import stream
 async def main():
     async for c in stream('count to 3'):
         print(c, end='', flush=True)
